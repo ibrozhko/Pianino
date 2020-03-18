@@ -5,9 +5,8 @@ const notes = {
   mi: document.querySelector("#mi"),
   fa: document.querySelector("#fa"),
   sol: document.querySelector("#sol"),
-  lja: document.querySelector("#la"),
-  si: document.querySelector("#si"),
-  dodo: document.querySelector("#dodo")
+  lja: document.querySelector("#lja"),
+  si: document.querySelector("#si")
 };
 const notesAudio = {
   do: function soundClick() {
@@ -51,22 +50,8 @@ const notesAudio = {
     audio.src = "si.mp3";
     audio.autoplay = true;
     notes.si.style.backgroundColor = getRandomColor();
-  },
-  dodo: function soundClick() {
-    var audio = new Audio();
-    audio.src = "noty-do.mp3";
-    audio.autoplay = true;
-    notes.dodo.style.backgroundColor = getRandomColor();
   }
 };
-function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
 
 notes.do.addEventListener("click", notesAudio.do);
 notes.re.addEventListener("click", notesAudio.re);
@@ -75,4 +60,3 @@ notes.fa.addEventListener("click", notesAudio.fa);
 notes.sol.addEventListener("click", notesAudio.sol);
 notes.lja.addEventListener("click", notesAudio.lja);
 notes.si.addEventListener("click", notesAudio.si);
-notes.dodo.addEventListener("click", notesAudio.dodo);
